@@ -82,10 +82,10 @@ blogsRouter.delete("/:id", async (request, response) => {
 
   //Esto hace que solo se pueda borrar si le paso un token valido
   //Despues tendria que hacer que solo se pueda borrar si el token que le paso es el mismo token que el del usuario que creo el blog
-  const decodedToken = jwt.verify(getTokenFrom(request), config.SECRET)
-  if(!decodedToken.id) {
-    return response.status(401).json({ error: "Token invalid" })
-  }
+  // const decodedToken = jwt.verify(getTokenFrom(request), config.SECRET)
+  // if(!decodedToken.id) {
+  //   return response.status(401).json({ error: "Token invalid" })
+  // }
 
   //Con await/async
   await Blog.findByIdAndDelete(request.params.id)
