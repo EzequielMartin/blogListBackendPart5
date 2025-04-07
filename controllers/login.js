@@ -31,7 +31,7 @@ loginRouter.post("/", async (request, response) => {
   //Si la solicitud es exitosa se devuelve un status code 200 OK y se envia el token, usuario y nombre en el cuerpo de la respuesta
   response
     .status(200)
-    .send({ token, username: user.username, name: user.name })
+    .send({ token, username: user.username, name: user.name, id: user.id })
 })
 
 module.exports = loginRouter
